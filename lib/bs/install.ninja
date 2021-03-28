@@ -1,0 +1,14 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o patternMatchingReason.cmi : cp ../bs/src/re/patternMatchingReason.cmi
+o patternMatchingReason.cmj : cp ../bs/src/re/patternMatchingReason.cmj
+o patternMatchingReason.cmt : cp ../bs/src/re/patternMatchingReason.cmt
+o patternMatchingReason.re : cp ../../src/re/patternMatchingReason.re
+o patternMatchingRescript.cmi : cp ../bs/src/res/patternMatchingRescript.cmi
+o patternMatchingRescript.cmj : cp ../bs/src/res/patternMatchingRescript.cmj
+o patternMatchingRescript.cmt : cp ../bs/src/res/patternMatchingRescript.cmt
+o patternMatchingRescript.res : cp ../../src/res/patternMatchingRescript.res
+build install.stamp : touch patternMatchingReason.cmi patternMatchingReason.cmj patternMatchingRescript.cmi patternMatchingRescript.cmj 

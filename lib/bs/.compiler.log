@@ -1,0 +1,63 @@
+#Start(1616899059049)
+
+  Warning number 8
+  /Users/moses/Code/screencasts/pattern-matching/src/res/patternMatchingRescript.res:3:5-7:5
+  
+  1 │ module PatternMatchingExample = {
+  2 │   let rec findIfExists = (element: 'any, list: list<'any>): bool => {
+  3 │     switch list {
+  4 │     | list{} => false
+  5 │     | list{head, ...tail} when head == element => true
+  6 │     | list{head, ...tail} when head != element => findIfExists(element,
+       tail)
+  7 │     }
+  8 │   }
+  9 │ }
+  
+  You forgot to handle a possible case here, for example: 
+  _::_
+(However, some guarded clause may match this value.)
+  
+
+  Warning number 27
+  /Users/moses/Code/screencasts/pattern-matching/src/res/patternMatchingRescript.res:5:21-24
+  
+  3 ┆ switch list {
+  4 ┆ | list{} => false
+  5 ┆ | list{head, ...tail} when head == element => true
+  6 ┆ | list{head, ...tail} when head != element => findIfExists(element, tai
+      l)
+  7 ┆ }
+  
+  unused variable tail.
+  
+
+  Warning number 8
+  /Users/moses/Code/screencasts/pattern-matching/src/re/patternMatchingReason.re:2:69-8:3
+  
+   1 │ module PatternMatchingExampleReason = {
+   2 │   let rec findIfExists = (element: 'any, list: list('any)): bool => {
+   3 │     switch (list) {
+   . │ ...
+   7 │     };
+   8 │   };
+   9 │ };
+  10 │ 
+  
+  You forgot to handle a possible case here, for example: 
+  _::_
+(However, some guarded clause may match this value.)
+  
+
+  Warning number 27
+  /Users/moses/Code/screencasts/pattern-matching/src/re/patternMatchingReason.re:5:17-20
+  
+  3 ┆ switch (list) {
+  4 ┆ | [] => false
+  5 ┆ | [head, ...tail] when head == element => true
+  6 ┆ | [head, ...tail] when head != element => findIfExists(element, tail)
+  7 ┆ };
+  
+  unused variable tail.
+  
+#Done(1616899059154)

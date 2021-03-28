@@ -1,0 +1,10 @@
+####{BSB GENERATED: NO EDIT
+FLG -ppx '/Users/moses/Code/screencasts/pattern-matching/node_modules/bs-platform/darwin/bsc.exe -as-ppx '
+S /Users/moses/Code/screencasts/pattern-matching/node_modules/bs-platform/lib/ocaml
+B /Users/moses/Code/screencasts/pattern-matching/node_modules/bs-platform/lib/ocaml
+FLG -w +a-4-9-20-40-41-42-50-61-102
+S src/re
+B lib/bs/src/re
+S src/res
+B lib/bs/src/res
+####BSB GENERATED: NO EDIT}

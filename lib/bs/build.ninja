@@ -1,0 +1,16 @@
+rescript = 1
+rule astj
+  command = /Users/moses/Code/screencasts/pattern-matching/node_modules/bs-platform/darwin/bsc.exe  -warn-error +101 -bs-v 9.0.2  -absname -bs-ast -o $out $i
+o src/re/patternMatchingReason.ast : astj ../../src/re/patternMatchingReason.re
+rule deps
+  command = /Users/moses/Code/screencasts/pattern-matching/node_modules/bs-platform/darwin/bsb_helper.exe -hash 20b2e0ae99afaa8d666115baa5f3b19f $in
+  restat = 1
+o src/re/patternMatchingReason.d : deps src/re/patternMatchingReason.ast
+rule mij
+  command = /Users/moses/Code/screencasts/pattern-matching/node_modules/bs-platform/darwin/bsc.exe -I src/res -I src/js -I src/ts -I src/re -I src   -warn-error +101 -bs-package-name pattern-matching-examplerescript-project-template -bs-package-output commonjs:$in_d:.bs.js $i
+  dyndep = 1
+  restat = 1
+o src/re/patternMatchingReason.cmj src/re/patternMatchingReason.cmi ../../src/re/patternMatchingReason.bs.js : mij src/re/patternMatchingReason.ast
+o src/res/patternMatchingRescript.ast : astj ../../src/res/patternMatchingRescript.res
+o src/res/patternMatchingRescript.d : deps src/res/patternMatchingRescript.ast
+o src/res/patternMatchingRescript.cmj src/res/patternMatchingRescript.cmi ../../src/res/patternMatchingRescript.bs.js : mij src/res/patternMatchingRescript.ast
